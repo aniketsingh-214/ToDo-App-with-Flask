@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container py-5">
+  <div class="card glass-card shadow-lg p-4 mb-4">
+    <h2 class="text-center fw-semibold mb-4 text-dark">Add a New ToDo ✍️</h2>
+    <form action="/" method="POST">
+      <div class="mb-3">
+        <label for="todoTitle" class="form-label fw-medium">Title</label>
+        <input type="text" name="title" class="form-control modern-input" id="title" placeholder="Enter your ToDo title" required>
+      </div>
+      <div class="mb-3">
+        <label for="todoDesc" class="form-label fw-medium">Description</label>
+        <textarea class="form-control modern-input" name="desc" id="desc" rows="3" placeholder="Enter ToDo description"></textarea>
+      </div>
+      <button type="submit" class="btn modern-btn w-100">Add ToDo</button>
+    </form>
+  </div>
+
+  {% if allTodo|length == 0 %}
+  <div class="alert alert-warning text-center glass-card">🚀 Add your first ToDo — No Record Found!</div>
+  {% else %}
+  <div class="table-responsive glass-card p-3 shadow-lg mt-4">
+    <table class="table table-hover align-middle text-center" id="todoTable">
+      <thead class="table-dark">
+        <tr>
+          <th>S.No</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Date Created</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for todo in allTodo %}
+        <tr class="fade-in">
+          <td>{{ loop.index }}</td>
+          <td>{{ todo.title }}</td>
+          <td>{{ todo.desc }}</td>
+          <td>{{ todo.date_created.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+          <td>
+            <a href="/update/{{ todo.sno }}" class="btn btn-sm btn-outline-primary rounded-pill px-3">Update</a>
+            <a href="/delete/{{ todo.sno }}" class="btn btn-sm btn-outline-danger rounded-pill px-3">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+</div>
+{% endblock body %}

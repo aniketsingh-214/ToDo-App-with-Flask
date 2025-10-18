@@ -1,0 +1,98 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #d9e8ff);
+  min-height: 100vh;
+}
+
+/* Navbar */
+.glass-nav {
+  backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.5) !important;
+  color: white;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  letter-spacing: 1px;
+}
+
+.search-box {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+.search-box::placeholder {
+  color: #e9ecef;
+}
+.search-box:focus {
+  background: rgba(255, 255, 255, 0.25);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Glass Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease;
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Inputs */
+.modern-input {
+  border: none !important;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.modern-input:focus {
+  background: #fff;
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+}
+
+/* Buttons */
+.modern-btn {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 0;
+  transition: 0.3s ease;
+}
+.modern-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Table */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.table-dark {
+  background: linear-gradient(135deg, #1e1e2f, #343a40);
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
