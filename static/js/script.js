@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const rows = table.getElementsByTagName("tr");
 
       Array.from(rows).forEach((row, index) => {
-        if (index === 0) return; // skip header
+        if (index === 0) return;
         const text = row.textContent.toLowerCase();
         row.style.display = text.includes(filter) ? "" : "none";
       });
